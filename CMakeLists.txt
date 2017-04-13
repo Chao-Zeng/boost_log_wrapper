@@ -9,6 +9,6 @@ SET(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 AUX_SOURCE_DIRECTORY(./ SRC_LIST)
 
-LINK_LIBRARIES(boost_thread boost_system boost_log boost_log_setup pthread)
+LINK_LIBRARIES(boost_thread boost_system boost_log boost_log_setup boost_filesystem pthread)
 
 ADD_EXECUTABLE(log_test ${SRC_LIST})
