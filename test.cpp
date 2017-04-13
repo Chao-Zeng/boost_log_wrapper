@@ -3,10 +3,11 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <sys/syscall.h>
+#include <iostream>
 
 int main(int argc, char* argv[])
 {
-    logger::init_log("log");
+    logger::init_log("./log/log_file");
 
     LOGGER(info) << "PID: " << getpid() << "  TID: " << syscall(SYS_gettid);
 
@@ -32,4 +33,9 @@ int main(int argc, char* argv[])
     LOGGER(warn) << "A log file warning severity message";
     LOGGER(error) << "An log file error severity message";
     LOGGER(fatal) << "A log file fatal severity message";
+
+    int i;
+    std::cin >> i;
+
+    return 0;
 }
