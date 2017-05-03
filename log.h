@@ -7,8 +7,8 @@
 namespace logger {
 
 /**
-    * log severity levels.
-    */
+ * log severity levels.
+ */
 enum severity_level
 {
     debug,
@@ -21,23 +21,23 @@ enum severity_level
 BOOST_LOG_GLOBAL_LOGGER(my_logger, boost::log::sources::severity_logger_mt< severity_level >)
 
 /**
-    * init log module
-    */
+ * init log module
+ */
 void init_log(const std::string& log_file_name);
 
 /**
-    * set log level
-    */
+ * set log level
+ */
 void set_log_level(severity_level level);
 
 /**
-* open console level
-*/
+ * open console level
+ */
 void open_console_log();
 
 /**
-* close console level
-*/
+ * close console level
+ */
 void close_console_log();
 
 } //namespace logger 

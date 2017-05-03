@@ -137,7 +137,7 @@ static void add_file_log(const std::string& log_file_name)
             keywords::rotation_size = log_file_rotation_size,
             keywords::time_based_rotation = sinks::file::rotation_at_time_point(12, 0, 0)
             );
-    
+
     //backend->auto_flush(true);
 
     // Wrap it into the frontend and register in the core.
@@ -147,7 +147,7 @@ static void add_file_log(const std::string& log_file_name)
                             record_queue_limit,
                             sinks::drop_on_overflow>
             > sink_t;
-            
+
     boost::shared_ptr< sink_t > sink(new sink_t(backend));
 
     sink->set_formatter
@@ -197,4 +197,4 @@ void init_log(const std::string& log_file_name)
     set_log_level(info);
 }
 
-} //namespace logger 
+} //namespace logger
