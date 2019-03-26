@@ -214,7 +214,7 @@ void write_log(severity_level level, const char *format, ...)
     vsnprintf(message_buffer.data(), message_buffer.size(), format, args);
     va_end(args);
 
-    LOGGER(level) << message_buffer;
+    LOGGER(level) << message_buffer.data();
 }
 
 } //namespace logger
